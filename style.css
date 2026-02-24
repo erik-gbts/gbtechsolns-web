@@ -1,0 +1,182 @@
+/*
+  GB Technology Solutions – Core Stylesheet
+  Static, GitHub Pages–friendly
+*/
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #0f172a; /* slate-900 */
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+p {
+  margin-top: 10px;
+}
+
+section {
+  padding: 80px 20px;
+}
+
+/* Layout */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.center {
+  text-align: center;
+}
+
+.dark {
+  background-color: #0b1220;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  margin: 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #2563eb; /* blue-600 */
+  color: #ffffff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #1d4ed8; /* blue-700 */
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid #2563eb;
+  color: #2563eb;
+}
+
+.btn-outline:hover {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  gap: 30px;
+}
+
+@media (min-width: 768px) {
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Cards */
+.card {
+  background-color: #111827; /* slate-800 */
+  padding: 30px;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Text helpers */
+.muted {
+  color: #94a3b8; /* slate-400 */
+}
+
+.testimonial {
+  font-style: italic;
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Lists */
+ul {
+  list-style: none;
+  margin-top: 20px;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+/* Forms */
+form {
+  margin-top: 25px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #1f2937;
+  background-color: #0b1220;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #64748b; /* slate-500 */
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+button.btn {
+  width: 100%;
+}
+
+/* Footer */
+footer {
+  padding: 40px 20px;
+  text-align: center;
+  border-top: 1px solid #1f2937;
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+/* Responsive tweaks */
+@media (max-width: 640px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  section {
+    padding: 60px 16px;
+  }
+}
