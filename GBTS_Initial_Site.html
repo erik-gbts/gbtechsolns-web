@@ -1,0 +1,147 @@
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { ShieldCheck, Cloud, Lock, Users, LineChart, Mail } from "lucide-react";
+import { motion } from "framer-motion";
+
+export default function SecurityConsultancySite() {
+  return (
+    <div className="min-h-screen bg-slate-950 text-white">
+      {/* Hero */}
+      <section className="px-6 py-20 text-center max-w-5xl mx-auto">
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl md:text-6xl font-bold leading-tight mb-6"
+        >
+          GB Technology Solutions — Cybersecurity That Lets NYC Businesses Sleep at Night
+        </motion.h1>
+        <p className="text-lg text-slate-300 mb-8">
+          We help small and midsize businesses — and solo founders — protect their systems,
+          data, and reputation without enterprise-level complexity or cost.
+        </p>
+        <div className="flex justify-center gap-4">
+          <Button className="text-lg px-6 py-5">Book a Free Security Review</Button>
+          <Button variant="outline" className="text-lg px-6 py-5">See Our Services</Button>
+        </div>
+      </section>
+
+      {/* Services */}
+      <section className="px-6 py-20 bg-slate-900">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-semibold text-center mb-14">Practical Security Services</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <ServiceCard
+              icon={<ShieldCheck size={32} />}
+              title="Security Assessments"
+              desc="Identify vulnerabilities in your systems, cloud apps, and workflows before attackers do."
+            />
+            <ServiceCard
+              icon={<Users size={32} />}
+              title="Virtual CISO (vCISO)"
+              desc="Executive-level security leadership without the full-time salary commitment."
+            />
+            <ServiceCard
+              icon={<Lock size={32} />}
+              title="Endpoint Protection"
+              desc="Protect laptops, mobile devices, and remote workers from ransomware and breaches."
+            />
+            <ServiceCard
+              icon={<LineChart size={32} />}
+              title="Compliance Support"
+              desc="Meet requirements for SOC 2, HIPAA, PCI, NERC CIP and client security questionnaires."
+            />
+            <ServiceCard
+              icon={<Mail size={32} />}
+              title="Security Awareness Training"
+              desc="Train your team to recognize phishing, scams, and social engineering attacks."
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Who We Serve */}
+      <section className="px-6 py-20">
+        <div className="max-w-5xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-semibold mb-8">Built for Growing Businesses</h2>
+          <p className="text-slate-300 text-lg mb-10">
+            We help NYC-based professional firms, startups, ecommerce brands,
+            and solo entrepreneurs who need strong cyber protection but not the overhead or complication of an enterprise security stack.
+          </p>
+          <div className="grid md:grid-cols-3 gap-6 text-left">
+            <Feature text="Flat, predictable pricing" />
+            <Feature text="No long-term contracts" />
+            <Feature text="Plain-English guidance" />
+            <Feature text="Fast response times" />
+            <Feature text="Security aligned with business goals" />
+            <Feature text="Local NYC support" />
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonial */}
+      <section className="px-6 py-20 bg-slate-900">
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="text-xl italic text-slate-300 mb-6">
+            “They helped us lock down our systems, pass a client security review, and finally
+            understand our cyber risks without the fear tactics.”
+          </p>
+          <p className="font-semibold">— NYC Marketing Agency Founder</p>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="px-6 py-20 text-center">
+        <h2 className="text-3xl md:text-4xl font-semibold mb-6">Let’s Secure Your Business</h2>
+        <p className="text-slate-300 mb-8 text-lg">
+          Book a free 30‑minute consultation and walk away with clear, actionable next steps.
+        </p>
+        <Button className="text-lg px-8 py-6">Schedule a Call</Button>
+      </section>
+
+      {/* Contact */}
+      <section className="px-6 py-20 bg-slate-900">
+        <div className="max-w-3xl mx-auto">
+          <Card className="bg-slate-800 border-slate-700">
+            <CardHeader>
+              <CardTitle>Contact GB Technology Solutions</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <p className="text-slate-400 text-sm">Prefer email? Reach us directly at <a href="mailto:erik@gbtechsolns.com" className="underline">erik@gbtechsolns.com</a></p>
+              <input placeholder="Your Name" className="w-full p-3 rounded bg-slate-900 border border-slate-700" />
+              <input placeholder="Email Address" className="w-full p-3 rounded bg-slate-900 border border-slate-700" />
+              <textarea placeholder="How can we help?" rows={4} className="w-full p-3 rounded bg-slate-900 border border-slate-700" />
+              <Button className="w-full">Send Message</Button>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="px-6 py-10 text-center text-slate-500 text-sm border-t border-slate-800">
+        © {new Date().getFullYear()} GB Technology Solutions. All rights reserved.
+      </footer>
+    </div>
+  );
+}
+
+function ServiceCard({ icon, title, desc }) {
+  return (
+    <Card className="bg-slate-800 border-slate-700 hover:scale-105 transition-transform">
+      <CardHeader className="flex flex-col items-center text-center gap-4">
+        <div className="p-3 bg-slate-900 rounded-full">{icon}</div>
+        <CardTitle>{title}</CardTitle>
+      </CardHeader>
+      <CardContent className="text-slate-300 text-center">{desc}</CardContent>
+    </Card>
+  );
+}
+
+function Feature({ text }) {
+  return (
+    <div className="flex items-start gap-3">
+      <ShieldCheck className="mt-1" size={18} />
+      <p className="text-slate-300">{text}</p>
+    </div>
+  );
+}
