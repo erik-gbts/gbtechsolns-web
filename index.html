@@ -1,147 +1,138 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { ShieldCheck, Cloud, Lock, Users, LineChart, Mail } from "lucide-react";
-import { motion } from "framer-motion";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GB Technology Solutions | NYC Cybersecurity Consulting</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, Helvetica, sans-serif; background: #0f172a; color: #ffffff; line-height: 1.6; }
+    h1, h2, h3 { font-weight: 700; }
+    section { padding: 80px 20px; }
+    .container { max-width: 1100px; margin: auto; }
+    .center { text-align: center; }
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      margin: 10px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s ease;
+    }
+    .btn-primary { background: #2563eb; color: white; }
+    .btn-primary:hover { background: #1d4ed8; }
+    .btn-outline { border: 2px solid #2563eb; color: #2563eb; }
+    .btn-outline:hover { background: #2563eb; color: white; }
+    .dark { background: #0b1220; }
+    .grid { display: grid; gap: 30px; }
+    @media(min-width: 768px) { .grid-3 { grid-template-columns: repeat(3, 1fr); } }
+    .card {
+      background: #111827;
+      padding: 30px;
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover { transform: translateY(-6px); box-shadow: 0 10px 25px rgba(0,0,0,0.4); }
+    .muted { color: #94a3b8; }
+    ul { list-style: none; margin-top: 20px; }
+    li { margin-bottom: 10px; }
+    .testimonial { font-style: italic; font-size: 1.2em; }
+    footer { padding: 40px 20px; text-align: center; border-top: 1px solid #1f2937; color: #94a3b8; }
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: 1px solid #1f2937;
+      background: #0b1220;
+      color: white;
+    }
+    form { margin-top: 20px; }
+  </style>
+</head>
+<body>
 
-export default function SecurityConsultancySite() {
-  return (
-    <div className="min-h-screen bg-slate-950 text-white">
-      {/* Hero */}
-      <section className="px-6 py-20 text-center max-w-5xl mx-auto">
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-4xl md:text-6xl font-bold leading-tight mb-6"
-        >
-          GB Technology Solutions — Cybersecurity That Lets NYC Businesses Sleep at Night
-        </motion.h1>
-        <p className="text-lg text-slate-300 mb-8">
-          We help small and midsize businesses — and solo founders — protect their systems,
-          data, and reputation without enterprise-level complexity or cost.
-        </p>
-        <div className="flex justify-center gap-4">
-          <Button className="text-lg px-6 py-5">Book a Free Security Review</Button>
-          <Button variant="outline" className="text-lg px-6 py-5">See Our Services</Button>
-        </div>
-      </section>
-
-      {/* Services */}
-      <section className="px-6 py-20 bg-slate-900">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-semibold text-center mb-14">Practical Security Services</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <ServiceCard
-              icon={<ShieldCheck size={32} />}
-              title="Security Assessments"
-              desc="Identify vulnerabilities in your systems, cloud apps, and workflows before attackers do."
-            />
-            <ServiceCard
-              icon={<Users size={32} />}
-              title="Virtual CISO (vCISO)"
-              desc="Executive-level security leadership without the full-time salary commitment."
-            />
-            <ServiceCard
-              icon={<Lock size={32} />}
-              title="Endpoint Protection"
-              desc="Protect laptops, mobile devices, and remote workers from ransomware and breaches."
-            />
-            <ServiceCard
-              icon={<LineChart size={32} />}
-              title="Compliance Support"
-              desc="Meet requirements for SOC 2, HIPAA, PCI, NERC CIP and client security questionnaires."
-            />
-            <ServiceCard
-              icon={<Mail size={32} />}
-              title="Security Awareness Training"
-              desc="Train your team to recognize phishing, scams, and social engineering attacks."
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Who We Serve */}
-      <section className="px-6 py-20">
-        <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-semibold mb-8">Built for Growing Businesses</h2>
-          <p className="text-slate-300 text-lg mb-10">
-            We help NYC-based professional firms, startups, ecommerce brands,
-            and solo entrepreneurs who need strong cyber protection but not the overhead or complication of an enterprise security stack.
-          </p>
-          <div className="grid md:grid-cols-3 gap-6 text-left">
-            <Feature text="Flat, predictable pricing" />
-            <Feature text="No long-term contracts" />
-            <Feature text="Plain-English guidance" />
-            <Feature text="Fast response times" />
-            <Feature text="Security aligned with business goals" />
-            <Feature text="Local NYC support" />
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonial */}
-      <section className="px-6 py-20 bg-slate-900">
-        <div className="max-w-3xl mx-auto text-center">
-          <p className="text-xl italic text-slate-300 mb-6">
-            “They helped us lock down our systems, pass a client security review, and finally
-            understand our cyber risks without the fear tactics.”
-          </p>
-          <p className="font-semibold">— NYC Marketing Agency Founder</p>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="px-6 py-20 text-center">
-        <h2 className="text-3xl md:text-4xl font-semibold mb-6">Let’s Secure Your Business</h2>
-        <p className="text-slate-300 mb-8 text-lg">
-          Book a free 30‑minute consultation and walk away with clear, actionable next steps.
-        </p>
-        <Button className="text-lg px-8 py-6">Schedule a Call</Button>
-      </section>
-
-      {/* Contact */}
-      <section className="px-6 py-20 bg-slate-900">
-        <div className="max-w-3xl mx-auto">
-          <Card className="bg-slate-800 border-slate-700">
-            <CardHeader>
-              <CardTitle>Contact GB Technology Solutions</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <p className="text-slate-400 text-sm">Prefer email? Reach us directly at <a href="mailto:erik@gbtechsolns.com" className="underline">erik@gbtechsolns.com</a></p>
-              <input placeholder="Your Name" className="w-full p-3 rounded bg-slate-900 border border-slate-700" />
-              <input placeholder="Email Address" className="w-full p-3 rounded bg-slate-900 border border-slate-700" />
-              <textarea placeholder="How can we help?" rows={4} className="w-full p-3 rounded bg-slate-900 border border-slate-700" />
-              <Button className="w-full">Send Message</Button>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="px-6 py-10 text-center text-slate-500 text-sm border-t border-slate-800">
-        © {new Date().getFullYear()} GB Technology Solutions. All rights reserved.
-      </footer>
+  <!-- Hero -->
+  <section class="center">
+    <div class="container">
+      <h1 style="font-size: 2.8rem; margin-bottom: 20px;">GB Technology Solutions — Cybersecurity That Lets NYC Businesses Sleep at Night</h1>
+      <p class="muted" style="font-size: 1.2rem; margin-bottom: 30px;">
+        We help small and midsize businesses and solo entrepreneurs protect their systems,
+        data, and reputation without enterprise-level complexity or cost.
+      </p>
+      <a href="#contact" class="btn btn-primary">Book a Free Security Review</a>
+      <a href="#services" class="btn btn-outline">See Our Services</a>
     </div>
-  );
-}
+  </section>
 
-function ServiceCard({ icon, title, desc }) {
-  return (
-    <Card className="bg-slate-800 border-slate-700 hover:scale-105 transition-transform">
-      <CardHeader className="flex flex-col items-center text-center gap-4">
-        <div className="p-3 bg-slate-900 rounded-full">{icon}</div>
-        <CardTitle>{title}</CardTitle>
-      </CardHeader>
-      <CardContent className="text-slate-300 text-center">{desc}</CardContent>
-    </Card>
-  );
-}
-
-function Feature({ text }) {
-  return (
-    <div className="flex items-start gap-3">
-      <ShieldCheck className="mt-1" size={18} />
-      <p className="text-slate-300">{text}</p>
+  <!-- Services -->
+  <section id="services" class="dark">
+    <div class="container center">
+      <h2 style="font-size: 2.2rem; margin-bottom: 50px;">Practical Security Services</h2>
+      <div class="grid grid-3">
+        <div class="card"><h3>Security Assessments</h3><p class="muted">Identify vulnerabilities before attackers do.</p></div>
+        <div class="card"><h3>Virtual CISO (vCISO)</h3><p class="muted">Executive-level security leadership without full-time cost.</p></div>
+        <div class="card"><h3>Cloud Security</h3><p class="muted">Secure Microsoft 365, Google Workspace, AWS, and Azure.</p></div>
+        <div class="card"><h3>Endpoint Protection</h3><p class="muted">Protect devices from ransomware and breaches.</p></div>
+        <div class="card"><h3>Compliance Support</h3><p class="muted">SOC 2, HIPAA, PCI, and security questionnaires.</p></div>
+        <div class="card"><h3>Security Awareness Training</h3><p class="muted">Train teams to recognize phishing and scams.</p></div>
+      </div>
     </div>
-  );
-}
+  </section>
+
+  <!-- Who We Serve -->
+  <section>
+    <div class="container center">
+      <h2 style="font-size: 2.2rem; margin-bottom: 20px;">Built for Growing Businesses</h2>
+      <p class="muted" style="margin-bottom: 30px;">
+        Supporting NYC professional firms, startups, ecommerce brands, and solo founders.
+      </p>
+      <ul class="muted">
+        <li>✔ Flat, predictable pricing</li>
+        <li>✔ No long-term contracts</li>
+        <li>✔ Plain-English guidance</li>
+        <li>✔ Fast response times</li>
+        <li>✔ Security aligned with business goals</li>
+        <li>✔ Local NYC support</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Testimonial -->
+  <section class="dark center">
+    <div class="container">
+      <p class="testimonial">“They helped us lock down our systems, pass a client security review, and finally understand our cyber risks without the fear tactics.”</p>
+      <p style="margin-top:20px; font-weight:bold;">— NYC Marketing Agency Founder</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="center">
+    <div class="container">
+      <h2 style="font-size: 2rem; margin-bottom: 20px;">Let’s Secure Your Business</h2>
+      <p class="muted" style="margin-bottom: 30px;">Book a free 30‑minute consultation and walk away with clear next steps.</p>
+      <a href="#contact" class="btn btn-primary">Schedule a Call</a>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="dark">
+    <div class="container" style="max-width:600px;">
+      <h2 class="center" style="margin-bottom: 10px;">Contact GB Technology Solutions</h2>
+      <p class="center muted">Prefer email? Reach us directly at <a href="mailto:erik@gbtechsolns.com" style="color:#60a5fa;">erik@gbtechsolns.com</a></p>
+      <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Email Address" required />
+        <textarea rows="5" placeholder="How can we help?" required></textarea>
+        <button type="submit" class="btn btn-primary" style="width:100%;">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 GB Technology Solutions. All rights reserved.
+  </footer>
+
+</body>
+</html>
